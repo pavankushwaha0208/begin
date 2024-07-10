@@ -1,12 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\usercontroller;
 
-Route::get('/', function () {
-    return view('home');
-});
 
-Route::get('/about', function () {
-    return view('about');
-});
+//web routing 
+
+
+Route::get('/' , [usercontroller::class, 'home']);
+Route::get('/about' , [usercontroller::class, 'about']);
+
+Route::get('/form' , [usercontroller::class, 'form']);
+Route::post('/register' , [usercontroller::class, 'register']);
 
